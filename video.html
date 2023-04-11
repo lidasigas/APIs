@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en"
+  <head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <video id="video" controls> 
+
+      <source src="video.mp4">
+      $("#run").click(() => tryCatch(run)); async function run() { await
+      video.run(async (context) => { await context.sync();
+      console.log("Finished!"); }); } async function tryCatch(callback) { try {
+      await callback(); } catch (error) { console.error(error); } }
+      <p>El vídeo se está cargando</p>
+    </video>
+    <div>
+      <button 
+      onclick="document.getElementByID('video').play();">Reproducir</button>
+      <button 
+      onclick="document.getElementById('video').pause();">Pausa</button>
+      <button onclick="document.getElementById('video').volume += 0.1;">Subir volumen</button>
+      <button onclick="document.getElementByID('video').volume -= 0.1;">Bajar Volumen</button>
+    </div>
+  </body>
+</html>
